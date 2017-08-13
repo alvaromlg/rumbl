@@ -1,5 +1,7 @@
 # Rumbl
 
+Phoenix framework (elixir) application which will allow us to take videos (hosted elsewhere) and attach comments to them in real time and play them back alongside the comments of other users.
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
