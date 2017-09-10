@@ -11,8 +11,9 @@ defmodule Rumbl.User do
     # virtual fields are not persisted to the database
     field :password, :string, virtual: true
     field :password_hash, :string
+    has_many :videos, Rumbl.Video
 
-    timestamps
+    timestamps()
   end
 
   def changeset(model, params \\ :empty) do
