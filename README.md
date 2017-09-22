@@ -13,6 +13,10 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+## Run tests
+  * All the tests `mix test`
+  * Tests only matching login_as's tag `mix test test/controllers --only login_as`
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
