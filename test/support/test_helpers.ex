@@ -3,13 +3,13 @@ defmodule Rumbl.TestHelpers do
   alias Rumbl.Repo
 
   def insert_user(attrs \\ %{}) do
-    changes = Dict.merge(%{
+    changes = Enum.into(attrs, %{
       name: "Some User",
       # rand_bytes() was deprecated in OTP 19 and later removed in OTP 20.
       # using strong_rand_bytes instead
       username: "user#{Base.encode16(:crypto.strong_rand_bytes(8))}",
       password: "supersecret",
-    }, attrs)
+    })
 
     %Rumbl.User{}
     |> Rumbl.User.registration_changeset(changes)
