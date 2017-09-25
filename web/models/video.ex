@@ -15,7 +15,7 @@ defmodule Rumbl.Video do
   # Optional fields are no longer required for cast method
   #@optional_fields ~w(category_id)
 
-  def changeset(model, params \\ :empty) do
+  def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields)
     |> validate_required([:url, :title, :description])
