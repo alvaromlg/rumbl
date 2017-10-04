@@ -3,8 +3,10 @@ defmodule Rumbl.VideoViewTest do
   import Phoenix.View
 
   test "renders index.html", %{conn: conn} do
-    videos = [%Rumbl.Video{id: "1", title: "dogs", category: %Rumbl.Category{name: "Animals"}},
-              %Rumbl.Video{id: "2", title: "cats", category: %Rumbl.Category{name: "Animals"}}]
+    videos = [%Rumbl.Video{id: "1", title: "dogs",
+                           category: %Rumbl.Category{name: "Animals"}},
+              %Rumbl.Video{id: "2", title: "cats",
+                           category: %Rumbl.Category{name: "Animals"}}]
     content = render_to_string(Rumbl.VideoView, "index.html",
                                conn: conn, videos: videos)
 
