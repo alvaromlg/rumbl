@@ -1,4 +1,4 @@
-defmodule Rumbl.InfoSys.Wolfram do
+defmodule Rumbl.InfoSys.WolFram do
   import SweetXml
   alias Rumbl.InfoSys.Result
 
