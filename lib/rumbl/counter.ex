@@ -46,7 +46,19 @@ defmodule Rumbl.Counter do
   end
 
   def init(initial_val) do
+    #Process.send_after(self, :tick, 1000) sends :tick every 1000 miliseconds
     {:ok, initial_val}
+  end
+
+  # crashing server when val lesser or equal to zero
+  def handle_info(:tick, val) when val <= 0, do: raise "boom!"
+  def handle_info(:tick, val) do
+    """
+    prints val and sends a :tick every 1000 miliseconds
+    IO.puts "tick #{val}"
+    Process.send_after(self, :tick, 1000)
+    """
+    {:noreply, val - 1}
   end
 
   def handle_cast(:inc, val) do
